@@ -1,0 +1,39 @@
+h4 {
+  margin-bottom: 32px;
+}
+.form-container {
+  margin: 0 auto;
+  max-width: 400px;
+  display: block;
+  margin-bottom: 3rem;
+  box-shadow: 0 3px 50px rgba(0, 0, 60, 0.1), 0 3px 25px rgba(0, 0, 60, 0.3);
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+}
+.form-container-section{
+  padding: 20 3rem;
+}
+.form-container-section:nth-child(even) {
+  background-color: #f7f7f9;
+}
+/*TODO move to global css*/
+.login-button {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+  display: block;
+  margin: 15px auto;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  width: 80px;
+}
+.login-button:hover {
+  background-color: #025aa5;
+  border-color: #01549b;
+}

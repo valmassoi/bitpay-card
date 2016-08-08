@@ -1,0 +1,49 @@
+<div class="form-container">
+  <div class="form-container-section">
+  <h4>Login to your account</h4>
+  <form [ngFormModel]="loginForm" (ngSubmit)="login()">
+    <fieldset>
+      <div class="form-group">
+        <!-- <label for="email">Email</label> -->
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          ngControl="email"
+          #email="ngForm"
+          placeholder="Email Address"
+          required>
+        <div *ngIf="email.touched && email.errors">
+          <div
+          *ngIf="email.errors.invalidEmail"
+          class="text-danger"
+          >Please enter a valid email address
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- <label for="password">Password</label> -->
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          ngControl="password"
+          #password="ngForm"
+          placeholder="Password"
+          >
+        <div
+        *ngIf="password.touched && !password.valid"
+        class="text-danger"
+        >Please enter your password
+        </div>
+      </div>
+    </fieldset>
+    <button class="btn btn-primary login-button" type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+  <a href="#">Forgot password?</a>
+  </div>
+  <div class="form-container-section">
+    <h4>First time logging in?</h4>
+    <a href="#">Register your card ></a>
+  </div>
+</div>
