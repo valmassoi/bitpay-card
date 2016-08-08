@@ -5,4 +5,4 @@ A `MEAN` full stack `JavaScript` + `TypeScript` single page app - `MongoDB` + `E
 Hosted at https://bitpay-card.herokuapp.com/
 
 ## TODO
-- [ ]   
+- [ ] User database/auth  
