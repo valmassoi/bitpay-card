@@ -1,4 +1,4 @@
-<div class="form-container">
+<div class="form-container" [class.bad]="isWrongLogin">
   <div class="form-container-section">
   <h4>Login to your account</h4>
   <form [ngFormModel]="loginForm" (ngSubmit)="login()">

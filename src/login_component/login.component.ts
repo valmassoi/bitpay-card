@@ -13,6 +13,7 @@ import { UserService } from '../_services/auth/user.service';
 })
 export class LoginComponent {
   loginForm: ControlGroup;
+  isWrongLogin=false;
 
   constructor(
     fb: FormBuilder,
@@ -27,16 +28,21 @@ export class LoginComponent {
   }
 
   login(){ //save
+    this.isWrongLogin=false;
     var data = this.loginForm.value
     console.log(data)
-    this._userService.login(data.email, data.password).subscribe((result) => {
-      if (result) {
-        console.log(result)
-        this._router.navigate(['dashboard'])
-      }
-      else {
-        alert("Incorrect Email or Password.\nPlease try again.")//HACK change to shake box
-      }
-    })
+    this._userService.login(data.email, data.password)
+      .subscribe((result) => {
+        if (result) {
+          console.log("login succes:", result)
+          this._router.navigate(['dashboard'])
+          console.log("should nav to dashboard")
+        }
+        else {
+          // alert("Incorrect Email or Password.\nPlease try again.")//HACK change to shake box
+          // make boxes red
+          this.isWrongLogin=true;
+        }
+      })
   }
 }

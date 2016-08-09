@@ -7,3 +7,4 @@ Note: Being hosted free may cause a slow load if app needs to wake.
 
 ## TODO
 - [ ] User database/auth(jwt)  
+- [ ] Transaction pagination, search, and filter

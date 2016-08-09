@@ -20,8 +20,8 @@
         <li [routerLinkActive]="['active']">
           <a [routerLink]="['dashboard']" (click)="isCollapsed = true">Dashboard</a>
         </li>
-        <li [routerLinkActive]="['active']">
-          <a [routerLink]="['settings']" (click)="isCollapsed = true">Settings</a>
+        <li *ngIf="isLoggedIn">
+          <a  [routerLink]="['home']" (click)="logout()">Logout</a>
         </li>
       </ul>
     </div>

@@ -16,7 +16,10 @@ module.exports = function(app) {
     let { email, password } = req.body
     let profile = req.headers.authorization
     console.log("auth req by:", email, password);
-    res.send({ success:true })//HACK
+    let success = false;
+    if (email === "a@a.aa" && password === "a")//HACK
+      success = true;
+    res.send({ success })//HACK
   })
 
 }
