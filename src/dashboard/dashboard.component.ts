@@ -12,7 +12,13 @@ import { TransactionsComponent } from './transactions/transactions.component';
 })
 export class DashboardComponent implements CanActivate {
 
-  constructor() { }
+  constructor() {
+
+  }
+
+  onComponentChange(e) {
+    console.log("Dash:", e.newComponent)
+  }
 
   canActivate() {
     return false;

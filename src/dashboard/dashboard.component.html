@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 well noprint">
-      <sidebar></sidebar>
+      <sidebar (change)="onComponentChange($event)"></sidebar>
     </div>
     <div id="trans" class="col-sm-9 col-md-10">
       <div id="tools" class="row">

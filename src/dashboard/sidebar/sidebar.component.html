@@ -1,23 +1,23 @@
 <ul>
-  <li class="active"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Activity</li>
-  <li>
+  <li [class.active]="activeComponent==='activity'" (click)="changeActiveComponent($event, 'activity')"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Activity</li>
+  <li (click)="changeActiveComponent($event, 'contact info')">
     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
     <ul class="options">
-      <li>Contact Info</li>
-      <li>Change Password</li>
-      <li>Change PIN</li>
-      <li>Direct Deposit Form</li>
+      <li [class.active]="activeComponent==='contact info'" (click)="changeActiveComponent($event, 'contact info')">Contact Info</li>
+      <li [class.active]="activeComponent==='change password'" (click)="changeActiveComponent($event, 'change password')">Change Password</li>
+      <li [class.active]="activeComponent==='change pin'" (click)="changeActiveComponent($event, 'change pin')">Change PIN</li>
+      <li [class.active]="activeComponent==='direct deposit form'" (click)="changeActiveComponent($event, 'direct deposit form')">Direct Deposit Form</li>
     </ul>
   </li>
-  <li>
+  <li [class.active]="activeComponent==='reload options'" (click)="changeActiveComponent($event, 'reload options')">
     <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> Reload options
   </li>
-  <li>
+  <li (click)="changeActiveComponent($event, 'report lost/stolen')">
     <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help
     <ul class="options">
-      <li>Report Lost/Stolen</li>
-      <li>Order Replacement</li>
-      <li>Contact Support</li>
+      <li [class.active]="activeComponent==='report lost/stolen'" (click)="changeActiveComponent($event, 'report lost/stolen')">Report Lost/Stolen</li>
+      <li [class.active]="activeComponent==='order replacement'" (click)="changeActiveComponent($event, 'order replacement')">Order Replacement</li>
+      <li [class.active]="activeComponent==='contact support'" (click)="changeActiveComponent($event, 'contact support')">Contact Support</li>
     </ul>
   </li>
 </ul>

@@ -4,6 +4,7 @@ ul {
 }
 li {
   margin-bottom: 15px;
+  cursor: pointer;
 }
 ul.options {
   border-left: 1px solid lightgrey;
@@ -14,8 +15,12 @@ ul.options > li {
   font-size: 12px;
   margin-bottom: 5px;
 }
-.active {
+ul.options > li:hover {
   color: #0275d8;
+  text-decoration: underline;
+}
+.active {
+  color: #0275d8 !important;
 }
 .btn-primary {
   color: white;

@@ -8,8 +8,8 @@ import { UserService } from '../_services/auth/user.service';
 @Component({
   selector: 'login-form',
   templateUrl: 'src/login_component/login.component.html',
-  styleUrls: ['src/login_component/login.component.css'],
-  providers: [UserService]
+  styleUrls: ['src/login_component/login.component.css']
+  // providers: [UserService] //get from main.ts (one service)
 })
 export class LoginComponent {
   loginForm: ControlGroup;
@@ -34,12 +34,9 @@ export class LoginComponent {
     this._userService.login(data.email, data.password)
       .subscribe((result) => {
         if (result) {
-          console.log("login succes:", result)
           this._router.navigate(['dashboard'])
-          console.log("should nav to dashboard")
         }
         else {
-          // alert("Incorrect Email or Password.\nPlease try again.")//HACK change to shake box
           // make boxes red
           this.isWrongLogin=true;
         }
