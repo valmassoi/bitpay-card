@@ -2,8 +2,10 @@
   background-color: #0e1c40;
   border-radius: 0;
 }
-a:hover {
+a:focus, a:hover{
   color: white !important;
+}
+a:hover {
   text-shadow: 0 0 1px white;
 }
 .navbar-toggle {

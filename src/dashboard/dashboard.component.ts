@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { Router } from '@angular/router';
+import { CanActivate } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['src/dashboard/dashboard.component.css'],
   directives: []
 })
-export class DashboardComponent {
+export class DashboardComponent implements CanActivate {
 
   constructor() { }
+
+  canActivate() {
+    return false;
+  }
 
 }

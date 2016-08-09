@@ -9,11 +9,11 @@ const requireAuth = passport.authenticate('jwt', { session: false })//false is t
 
 module.exports = function(app) {
 
-  app.get('/profile', (req, res, next) => {
-
-  })
-  app.post('/profile', (req, res, next) => {
-
+  // app.get('/profile', (req, res, next) => {
+  //
+  // })
+  app.post('/auth/login', (req, res, next) => {
+    res.send({ success:true })//HACK
   })
 
 }
