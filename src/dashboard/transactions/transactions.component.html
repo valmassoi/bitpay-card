@@ -1,50 +1,33 @@
 <table class="table table-striped table-hover">
- <thead>
+  <thead>
    <tr>
-     <th>#</th>
+     <th class="centered">#</th>
      <th>Note</th>
      <th>Date</th>
-     <th>Status</th>
-     <th>Amount</th>
+     <th class="centered">Status</th>
+     <th class="align-right">Amount</th>
    </tr>
- </thead>
- <tbody>
-<!-- HACK DATA -->
-    <tr>
-      <th>2</th>
-      <th>
-        <a>Add Note</a>
-      </th>
-      <th>
-        {{ timestamp | date: 'shortDate' }}
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions.slice().reverse()">
+      <td class="centered">{{transaction.id}}</td>
+      <td>
+        <a *ngIf="!transaction.note">Add Note</a>
+        {{transaction.note}}
+      </td>
+      <td>
+        {{ transaction.date | date: 'longDate' }}
         <!--IDEA if today say "Today" -->
         <p class="sub">{{ timestamp | date: 'shortTime' }}</p>
-      </th>
-      <th>
-        <i class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i>
-      </th>
-      <th>
-        {{ 12344561.346 | currency:'USD':true:'1.2-2' }}
+      </td>
+      <td class="centered">
+        <i *ngIf="transaction.pending" class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i>
+        <i *ngIf="!transaction.pending" class="fa fa-check fa-fw" aria-hidden="true"></i>
+      </td>
+      <td class="align-right">
+        {{ transaction.amount | currency:'USD':true:'1.2-2' }}
         <p class="sub">{balance}</p>
-      </th>
+      </td>
     </tr>
-    <tr>
-      <th>1</th>
-      <th>
-        Cool stuff
-      </th>
-      <th>
-        {{ timestamp | date: 'longDate' }}
-        <!--IDEA if today say "Today" -->
-        <p class="sub">{{ timestamp | date: 'shortTime' }}</p>
-      </th>
-      <th>
-        <i class="fa fa-check fa-fw" aria-hidden="true"></i>
-      </th>
-      <th>
-        {{ .01 | currency:'USD':true:'1.2-2' }}
-        <p class="sub">{balance}</p>
-      </th>
-    </tr>
- </tbody>
+  </tbody>
 </table>

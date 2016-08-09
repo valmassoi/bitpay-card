@@ -4,3 +4,12 @@
 .fa-check {
   color: green;
 }
+.centered {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+td {
+  /*border: 1px solid black !important;*/
+}
