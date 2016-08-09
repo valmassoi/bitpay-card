@@ -1,0 +1,27 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+li {
+  margin-bottom: 15px;
+}
+ul.options {
+  border-left: 1px solid lightgrey;
+  padding-left: 15px;
+}
+ul.options > li {
+  color: grey;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.active {
+  color: #0275d8;
+}
+.btn-primary {
+  color: white;
+  background-color: #0275d8;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #025aa5;
+}

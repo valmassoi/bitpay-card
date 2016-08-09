@@ -17,6 +17,7 @@ mongoose.connect(dbUrl)
 app.use(express.static(path.join(__dirname))) //TODO double security on check this
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 app.enable('trust proxy')
 app.use(favicon(path.join(__dirname, 'src/_assets/images', 'favicon.ico')))
 router(app)

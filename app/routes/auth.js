@@ -13,6 +13,9 @@ module.exports = function(app) {
   //
   // })
   app.post('/auth/login', (req, res, next) => {
+    let { email, password } = req.body
+    let profile = req.headers.authorization
+    console.log("auth req by:", email, password);
     res.send({ success:true })//HACK
   })
 
