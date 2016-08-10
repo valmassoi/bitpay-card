@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CanActivate } from '@angular/router';
 
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { TransactionsComponent } from './transactions/transactions.component';
+import { SidebarComponent } from './_sidebar/sidebar.component';
+import { TransactionsComponent } from './activity/activity.component';
 
 @Component({
   selector: 'dashboard',
@@ -12,12 +12,15 @@ import { TransactionsComponent } from './transactions/transactions.component';
 })
 export class DashboardComponent implements CanActivate {
 
+  activeComponent: string;
+
   constructor() {
 
   }
 
   onComponentChange(e) {
     console.log("Dash:", e.newComponent)
+    this.activeComponent = e.newComponent
   }
 
   canActivate() {

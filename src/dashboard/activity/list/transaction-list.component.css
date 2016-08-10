@@ -1,0 +1,26 @@
+.sub, .pending {
+  color: darkgrey;
+}
+.fa-check {
+  color: green;
+}
+.centered {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+td {
+  /*border: 1px solid black !important;*/
+  padding-bottom: 0px !important;
+}
+.amount {
+  font-size: 20px;
+}
+.top-up {
+  color: green;
+}
+.plus {
+  font-weight: bold;
+  font-size: 22px;
+}

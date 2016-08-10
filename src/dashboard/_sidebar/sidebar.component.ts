@@ -2,8 +2,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'sidebar',
-  templateUrl: 'src/dashboard/sidebar/sidebar.component.html',
-  styleUrls: ['src/dashboard/sidebar/sidebar.component.css'],
+  templateUrl: 'src/dashboard/_sidebar/sidebar.component.html',
+  styleUrls: ['src/dashboard/_sidebar/sidebar.component.css'],
   directives: []
 })
 export class SidebarComponent {
