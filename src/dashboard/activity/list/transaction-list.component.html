@@ -30,8 +30,7 @@
       </td>
       <td class="align-right">
         <span class="amount" [class.top-up]="transaction.amount>0">
-          <span class="plus" *ngIf="transaction.amount>0">+</span>
-          {{ transaction.amount | currency:'USD':true:'1.2-2' }}
+          <span class="plus" *ngIf="transaction.amount>0">+</span>{{ transaction.amount | currency:'USD':true:'1.2-2' }}
         </span>
         <p class="sub">{{ transaction.balance | currency:'USD':true:'1.2-2' }}</p>
       </td>

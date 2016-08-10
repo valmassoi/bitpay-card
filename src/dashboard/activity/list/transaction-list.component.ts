@@ -1,51 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivityService } from '../../../_services/activity/activity.service';
 
 @Component({
   selector: 'transaction-list',
   templateUrl: 'src/dashboard/activity/list/transaction-list.component.html',
   styleUrls: ['src/dashboard/activity/list/transaction-list.component.css'],
-  directives: []
+  directives: [],
+  providers: [ActivityService]
 })
-export class TransactionListComponent {
+export class TransactionListComponent implements OnInit {
 
-  transactions = [//HACK move to backend and in a service
-    {
-      id: 1,
-      note: "testing this out",
-      date: Date.now()-(2*24*60*60*1000)-31185198,
-      description: "Bitcoin top-up",
-      pending: false,
-      amount: .05,
-      balance: .05//calculated on backend at moment of dep/deb
-    },
-    {
-      id: 2,
-      note: null,
-      date: Date.now()-(24*60*60*1000)-21165198,
-      description: "Bitcoin top-up",
-      pending: false,
-      amount: 1000,
-      balance: 1000.05
-    },
-    {
-      id: 3,
-      note: "bought some cool thing",
-      date: Date.now()-(24*60*60*1000)-21165198,
-      description: "Shopping/Retail",
-      pending: false,
-      amount: -200.891,
-      balance: 1000.05-200.891
-    },
-    {
-      id: 4,
-      note: "cool stuff",
-      date: Date.now(),
-      description: "Bitcoin top-up",
-      pending: true,
-      amount: 100,
-      balance: 1000.05-200.891+100//TODO
-    }
-  ]
-  constructor() { }
+  activityLoading;
+  transactions=[];//Array<>
 
+  constructor(private _activityService: ActivityService) { }
+
+  ngOnInit() {
+    this.loadActivity()
+  }
+
+  private loadActivity(){ //(filter?) filter on backend
+    this.activityLoading = true
+    let token ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"//get from auth service
+    this._activityService.getActivity(token)
+      .subscribe(data => {
+        console.log(data)
+        if (data.error)
+          console.log("handle error")
+        else
+          this.transactions = data;
+        //  this.pagedPosts = _.take(this.activity, this.pageSize) //TODO pagination
+      },
+      null,
+      () => { this.activityLoading = false }
+    )
+  }
 }

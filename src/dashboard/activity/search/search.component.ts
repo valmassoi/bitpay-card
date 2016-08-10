@@ -59,13 +59,12 @@ export class SearchComponent {
     });
 
     var search = this.form.find('search');
-    search.valueChanges//Observables without calling observ..??
+    search.valueChanges
       .debounceTime(1000)//good if hitting server to sort
       .distinctUntilChanged()
-      // .map(str => (<string>str).replace(' ','-'))
       .subscribe(x => {
         console.log(x)
-        var filtered = this.transactions.filter(transaction => {
+        var filtered = this.transactions.filter(transaction => { //could filter on backend
           var note = transaction.note ? transaction.note.toLowerCase() : ""
           var description = transaction.description ? transaction.description.toLowerCase() : ""
           var amount = transaction.amount ? transaction.amount.toString() : ""
