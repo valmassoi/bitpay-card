@@ -7,7 +7,7 @@ const url  = require('url')
 
 const requireAuth = passport.authenticate('jwt', { session: false })//false is to use tokens over cookies
 
-module.exports = function(app) {
+module.exports = app => {
 
   // app.get('/profile', (req, res, next) => {
   //
