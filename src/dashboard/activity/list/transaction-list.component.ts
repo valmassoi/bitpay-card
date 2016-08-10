@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'transaction-list',
   templateUrl: 'src/dashboard/activity/list/transaction-list.component.html',
@@ -8,11 +7,11 @@ import { Component } from '@angular/core';
   directives: []
 })
 export class TransactionListComponent {
-  balance;
-  transactions = [//hack move to backend
+
+  transactions = [//HACK move to backend and in a service
     {
       id: 1,
-      note: null,
+      note: "testing this out",
       date: Date.now()-(2*24*60*60*1000)-31185198,
       description: "Bitcoin top-up",
       pending: false,
@@ -30,7 +29,7 @@ export class TransactionListComponent {
     },
     {
       id: 3,
-      note: null,
+      note: "bought some cool thing",
       date: Date.now()-(24*60*60*1000)-21165198,
       description: "Shopping/Retail",
       pending: false,

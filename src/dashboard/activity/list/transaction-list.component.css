@@ -2,7 +2,7 @@
   color: darkgrey;
 }
 .fa-check {
-  color: green;
+  color: #31B27B;
 }
 .centered {
   text-align: center;
@@ -18,7 +18,7 @@ td {
   font-size: 20px;
 }
 .top-up {
-  color: green;
+  color: #31B27B;
 }
 .plus {
   font-weight: bold;

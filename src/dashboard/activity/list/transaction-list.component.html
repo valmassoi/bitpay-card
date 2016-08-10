@@ -4,7 +4,7 @@
      <th class="centered"></th>
      <th>Note</th>
      <th>Date</th>
-     <th>Description</th>
+     <th class="align-right">Description</th>
      <th class="centered">Status</th>
      <th class="align-right">Amount</th>
    </tr>
@@ -21,7 +21,7 @@
         <!--IDEA if today say "Today" -->
         <p class="sub">{{ transaction.date | date: 'shortTime' }}</p>
       </td>
-      <td>
+      <td class="align-right">
         {{transaction.description}}
       </td>
       <td class="centered">

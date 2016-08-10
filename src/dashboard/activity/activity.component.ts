@@ -13,4 +13,7 @@ export class TransactionsComponent {
 
   constructor() { }
 
+    print() { //TODO csv export might be better
+      window.print()
+    }
 }

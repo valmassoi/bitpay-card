@@ -4,7 +4,7 @@
       <sidebar (change)="onComponentChange($event)"></sidebar>
     </div>
     <div [ngSwitch]="activeComponent">
-      <!-- TODO BREAK INTO COMPONENTS -->
+      <!-- Could use router here too -->
       <div *ngSwitchCase="'contact info'">Contact Info</div>
       <div *ngSwitchCase="'change password'">Change Password</div>
       <div *ngSwitchCase="'change pin'">Change PIN</div>

@@ -27,8 +27,4 @@ export class DashboardComponent implements CanActivate {
     return false;
   }
 
-  print() { //TODO csv export might be better
-    window.print()
-  }
-
 }
