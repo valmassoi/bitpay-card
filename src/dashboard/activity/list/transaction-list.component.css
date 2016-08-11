@@ -1,3 +1,5 @@
+@media print  { .noprint  { display: none; } }
+
 .sub, .pending {
   color: darkgrey;
 }
@@ -23,4 +25,16 @@ td {
 .plus {
   font-weight: bold;
   font-size: 22px;
+}
+#container {
+  overflow: visible !important;
+}
+#loading {
+  position: absolute;
+  left: 50%;
+  margin-left: -190px;
+  z-index: 100;
+}
+#activity {
+  min-height: 400px;
 }
