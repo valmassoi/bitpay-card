@@ -4,6 +4,7 @@
 }
 #balance-container {
   background-color: #1F3F95;
+  cursor: pointer;
 }
 #balance {
   color: white;

@@ -15,6 +15,9 @@ ul.options > li {
   font-size: 12px;
   margin-bottom: 5px;
 }
+ul.options > li:first-child {
+  padding-top: 5px;
+}
 ul.options > li:hover {
   color: #0275d8;
   text-decoration: underline;

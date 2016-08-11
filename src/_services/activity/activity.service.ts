@@ -30,6 +30,11 @@ export class ActivityService {
     return this.activity
   }
 
+  filteredActivity(filtered) {
+    this.activity = filtered//redundant
+    this.setActivity(filtered)
+  }
+
 
   private _getActivity = new BehaviorSubject<any>(this.getActivity());
 

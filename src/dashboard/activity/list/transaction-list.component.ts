@@ -1,4 +1,5 @@
-import { Component, OnInit, animate, transition, trigger, state, style } from '@angular/core';
+import { Component, OnInit, OnDestroy, animate, transition, trigger, state, style } from '@angular/core';
+import {Subscription} from 'rxjs/Subscription';
 import { ActivityService } from '../../../_services/activity/activity.service';
 
 @Component({
@@ -22,16 +23,24 @@ import { ActivityService } from '../../../_services/activity/activity.service';
     ])
   ]
 })
-export class TransactionListComponent implements OnInit {
+export class TransactionListComponent implements OnInit, OnDestroy {
 
   activityLoading;//spinner
   animationDone=false;
   transactions=[];//Array<>
+  subscription:Subscription;
 
   constructor(private _activityService: ActivityService) { }
 
   ngOnInit() {
     this.loadActivity()
+    this.subscription = this._activityService.setStatus$.subscribe(activity => {
+      this.transactions = activity || []
+      console.log("list subscription:",activity)
+    })
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   private loadActivity(){ //(filter?) filter on backend

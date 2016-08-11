@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
     var search = this.form.find('search');//TODO move out of constructor?
     search.valueChanges//IDEA animate changes with fade
-      .debounceTime(1000)//good if hitting server to sort
+      // .debounceTime(1000)//good if hitting server to sort
       .distinctUntilChanged()
       .subscribe(x => {
         console.log(x)
@@ -41,6 +41,7 @@ export class SearchComponent implements OnInit, OnDestroy {
           ) return transaction;
         })
         console.log(filtered)//send to service
+        _activityService.filteredActivity(filtered)
       });
   }
 
