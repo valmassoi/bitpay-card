@@ -1,65 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ControlGroup, FormBuilder } from '@angular/common'
 import { Observable } from 'rxjs/Rx';
-// import './rxjs-extensions';
+import {Subscription} from 'rxjs/Subscription';
 
+import { ActivityService } from '../../../_services/activity/activity.service';
 
 @Component({
     selector: 'search-bar',
     templateUrl: 'src/dashboard/activity/search/search.component.html',
     styleUrls: ['src/dashboard/activity/search/search.component.css'],
-    directives: []
+    directives: [],
+    providers: []
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit, OnDestroy {
 
-  transactions = [//HACK move to backend and in a service
-    {
-      id: 1,
-      note: "testing this out",
-      date: Date.now()-(2*24*60*60*1000)-31185198,
-      description: "Bitcoin top-up",
-      pending: false,
-      amount: .05,
-      balance: .05//calculated on backend at moment of dep/deb
-    },
-    {
-      id: 2,
-      note: null,
-      date: Date.now()-(24*60*60*1000)-21165198,
-      description: "Bitcoin top-up",
-      pending: false,
-      amount: 1000,
-      balance: 1000.05
-    },
-    {
-      id: 3,
-      note: "bought some cool thing",
-      date: Date.now()-(24*60*60*1000)-21165198,
-      description: "Shopping/Retail",
-      pending: false,
-      amount: -200.891,
-      balance: 1000.05-200.891
-    },
-    {
-      id: 4,
-      note: "cool stuff",
-      date: Date.now(),
-      description: "Bitcoin top-up",
-      pending: true,
-      amount: 100,
-      balance: 1000.05-200.891+100//TODO
-    }
-  ]
-
+  transactions = [ ]
+  subscription:Subscription;
   form: ControlGroup;
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private _activityService: ActivityService) {
 
     this.form = fb.group({
       search: []
     });
 
-    var search = this.form.find('search');
-    search.valueChanges
+    var search = this.form.find('search');//TODO move out of constructor?
+    search.valueChanges//IDEA animate changes with fade
       .debounceTime(1000)//good if hitting server to sort
       .distinctUntilChanged()
       .subscribe(x => {
@@ -78,4 +43,14 @@ export class SearchComponent {
         console.log(filtered)//send to service
       });
   }
+
+  ngOnInit() {
+    this.subscription = this._activityService.setStatus$.subscribe(activity => {
+      this.transactions = activity
+    })
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
 }

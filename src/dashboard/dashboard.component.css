@@ -1,1 +1,18 @@
 @media print  { .noprint  { display: none; } }
+.centered {
+  text-align: center;
+}
+#balance-container {
+  background-color: #1F3F95;
+}
+#balance {
+  color: white;
+  font-size: 28px;
+}
+.sub {
+  color: lightgrey;
+  font-size: 12px;
+}
+h1 {
+  font-size: 32px;
+}

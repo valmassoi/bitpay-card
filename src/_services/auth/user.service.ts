@@ -53,6 +53,6 @@ export class UserService {
   setStatus$ = this._isUserLoggedIn.asObservable();
 
   setLoginStatus(isLoggedIn){
-   this._isUserLoggedIn.next(isLoggedIn);
+    this._isUserLoggedIn.next(isLoggedIn);
   }
 }

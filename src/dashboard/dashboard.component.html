@@ -1,18 +1,26 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 col-md-2 well noprint">
-      <sidebar (change)="onComponentChange($event)"></sidebar>
+    <div class="col-sm-3 col-md-2">
+      <div id="balance-container" class="well centered">
+        <span id="balance">{{ 899.16 | currency:'USD':true:'1.2-2' }}</span>
+        <!-- TODO LOAD BAL FROM DB -->
+        <p class="sub">Available Balance</p>
+      </div>
+      <div class="well noprint">
+        <sidebar (change)="onComponentChange($event)"></sidebar>
+      </div>
     </div>
     <div [ngSwitch]="activeComponent">
       <!-- Could use router here too -->
-      <div *ngSwitchCase="'contact info'">Contact Info</div>
-      <div *ngSwitchCase="'change password'">Change Password</div>
-      <div *ngSwitchCase="'change pin'">Change PIN</div>
-      <div *ngSwitchCase="'direct deposit form'">Direct Deposit Form</div>
-      <div *ngSwitchCase="'reload options'">Reload Options</div>
-      <div *ngSwitchCase="'report lost/stolen'">Report Lost/Stolen</div>
-      <div *ngSwitchCase="'order replacement'">Order Replacement</div>
-      <div *ngSwitchCase="'contact support'">Contact Support</div>
+      <!-- IDEA have router look for query to go to right component for outside linking -->
+      <div *ngSwitchCase="'contact info'"><h1>Contact Info</h1></div>
+      <div *ngSwitchCase="'change password'"><h1>Change Password</h1></div>
+      <div *ngSwitchCase="'change pin'"><h1>Change PIN</h1></div>
+      <div *ngSwitchCase="'direct deposit form'"><h1>Direct Deposit Form</h1></div>
+      <div *ngSwitchCase="'reload options'"><h1>Reload Options</h1></div>
+      <div *ngSwitchCase="'report lost/stolen'"><h1>Report Lost/Stolen</h1></div>
+      <div *ngSwitchCase="'order replacement'"><h1>Order Replacement</h1></div>
+      <div *ngSwitchCase="'contact support'"><h1>Contact Support</h1></div>
       <div *ngSwitchDefault><activity></activity></div>
     </div>
   </div>

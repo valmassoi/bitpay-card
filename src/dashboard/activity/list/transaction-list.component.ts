@@ -6,7 +6,7 @@ import { ActivityService } from '../../../_services/activity/activity.service';
   templateUrl: 'src/dashboard/activity/list/transaction-list.component.html',
   styleUrls: ['src/dashboard/activity/list/transaction-list.component.css'],
   directives: [],
-  providers: [ActivityService],
+  providers: [],
   animations: [ //TODO only show once, not if navigating back and forth
     trigger('loadState', [
       state('active', style({
@@ -25,6 +25,7 @@ import { ActivityService } from '../../../_services/activity/activity.service';
 export class TransactionListComponent implements OnInit {
 
   activityLoading;//spinner
+  animationDone=false;
   transactions=[];//Array<>
 
   constructor(private _activityService: ActivityService) { }
@@ -35,8 +36,9 @@ export class TransactionListComponent implements OnInit {
 
   private loadActivity(){ //(filter?) filter on backend
     this.activityLoading = true
+    this.animationDone=false
     let token ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"//get from auth service
-    this._activityService.getActivity(token)
+    this._activityService.fetchActivity(token)
       .subscribe(data => {
         console.log(data)
         if (data.error)
@@ -46,7 +48,12 @@ export class TransactionListComponent implements OnInit {
         //  this.pagedPosts = _.take(this.activity, this.pageSize) //TODO pagination
       },
       null,
-      () => setTimeout(() => { this.activityLoading = false }, 1000)
+      () => {
+        setTimeout(() => {
+          this.activityLoading = false //to remove gif from DOM
+          setTimeout(() => {this.animationDone = true }, 1000)
+        }, 1000)
+      }
     )
   }
 }

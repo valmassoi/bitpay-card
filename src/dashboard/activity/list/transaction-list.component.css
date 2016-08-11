@@ -1,5 +1,9 @@
 @media print  { .noprint  { display: none; } }
 
+a {
+  cursor: pointer;
+}
+
 .sub, .pending {
   color: darkgrey;
 }
