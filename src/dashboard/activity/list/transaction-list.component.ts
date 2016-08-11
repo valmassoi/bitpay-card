@@ -29,6 +29,7 @@ export class TransactionListComponent implements OnInit, OnDestroy {
   animationDone=false;
   transactions=[];//Array<>
   subscription:Subscription;
+  editNote;
 
   constructor(private _activityService: ActivityService) { }
 
@@ -40,6 +41,11 @@ export class TransactionListComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  saveNote(id, newNote) {//TODO allow it to work during filter
+    this.editNote = null
+    this.transactions[id-1].note = newNote//HACK dont go by index
   }
 
   private loadActivity(){ //(filter?) filter on backend

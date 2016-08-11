@@ -10,8 +10,8 @@ a {
   color: #0275d8;
 }
 a:focus, a:hover {
-    color: #014c8c;
-    text-decoration: underline;
+  color: #014c8c;
+  text-decoration: underline;
 }
 .form-control:focus {
   border: 1px solid steelblue;

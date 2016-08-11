@@ -17,8 +17,11 @@
         <tr *ngFor="let transaction of transactions.slice().reverse()">
           <td class="centered">{{transaction.id}}</td>
           <td>
-            <a *ngIf="!transaction.note">Add Note</a>
-            {{transaction.note}} <a *ngIf="transaction.note"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+            <a *ngIf="!transaction.note && editNote!==transaction.id" (click)="editNote=transaction.id">Add Note</a>
+            {{transaction.note}} <a *ngIf="transaction.note && editNote!==transaction.id" (click)="editNote=transaction.id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+            <div *ngIf="editNote==transaction.id">
+              <input type="text" value="{{transaction.note}}" #note> <a (click)="editNote=null"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a> <a (click)="saveNote(transaction.id, note.value)"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span></a>
+            </div>
           </td>
           <td>
             {{ transaction.date | date: 'longDate' }}

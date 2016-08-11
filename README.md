@@ -21,8 +21,9 @@ Activity:
 * Loads mock user activity from `node.js` backend  
 * Transaction loading animation using `Web Animations API`  
 * Iterate transactions list using `*ngFor`  
-* Print transactions only removing the side bar using `@media print`  
 * Search transactions by note, description, or amount by `subscribing` to a `service`  
+* Add/Edit user notes about the transaction  
+* Print transactions only removing the side bar using `@media print`  
 * Format currency and date/time using `Custom Pipes`  
 
 ## Caveats
@@ -31,8 +32,10 @@ The focus of this project is on `Angular 2` and not backend, so there are securi
 
 ## TODO
 - [ ] Mobile  
+- [ ] Filter Dropdown  
+- [x] Add/edit notes  
 - [ ] Add funds button > modal w/ my bitpay-button animation  
-- [ ] Other dashboard pages
+- [ ] Other dashboard pages  
 - [ ] User database/auth(jwt)  
 - [ ] Transaction pagination and filter  
 - [x] Transaction search  

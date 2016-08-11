@@ -7,7 +7,7 @@ a {
 .sub, .pending {
   color: darkgrey;
 }
-.fa-check {
+.fa-check, .top-up, .glyphicon-ok-circle {
   color: #31B27B;
 }
 .centered {
@@ -22,9 +22,6 @@ td {
 }
 .amount {
   font-size: 20px;
-}
-.top-up {
-  color: #31B27B;
 }
 .plus {
   font-weight: bold;
@@ -41,4 +38,19 @@ td {
 }
 #activity {
   min-height: 400px;
+}
+.glyphicon-remove-circle, .glyphicon-ok-circle {
+  cursor: pointer;
+}
+.glyphicon-remove-circle {
+  color: #EA4335;
+}
+input, input:active, input:focus {
+  border-width: 0 0 3px 0;
+  border-color: #0275d8;
+  border-radius: 0;
+  outline-width: 0;
+}
+input:active {
+  border-color: #014c8c;
 }

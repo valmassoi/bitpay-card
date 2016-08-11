@@ -1,8 +1,8 @@
 #search label {
-    position: absolute;
-    left: 25px;
-    top: 14px;
-    color: lightgrey;
+  position: absolute;
+  left: 25px;
+  top: 14px;
+  color: lightgrey;
 }
 #search-input {
   padding-left: 50px;

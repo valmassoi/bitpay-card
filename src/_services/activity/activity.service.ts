@@ -28,7 +28,6 @@ export class ActivityService {
   }
 
   getActivity(filtered) {
-    console.log("getAct",this.activity)
     if(filtered)
       return this.unFiltered
     return this.activity
