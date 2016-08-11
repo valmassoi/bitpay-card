@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-sm-3 col-md-2">
       <div id="balance-container" class="well centered">
-        <span id="balance">{{ 899.16 | currency:'USD':true:'1.2-2' }}</span>
+        <svg id="circle" height="10" width="10">
+          <!-- whats this for? online status of what? TODO add red ngif... -->
+          <circle cx="5" cy="5" r="4" fill="#31B27B" />
+        </svg>
+        <span id="balance">{{ availableBalance | currency:'USD':true:'1.2-2' }}</span>
         <!-- TODO LOAD BAL FROM DB -->
         <p class="sub">Available Balance</p>
       </div>

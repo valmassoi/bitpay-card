@@ -12,3 +12,14 @@
   height: 50px;
   border-radius: 0px;
 }
+#search-clear {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  color: lightgrey;
+}
+#search-clear:hover {
+  color: #0275d8;
+  text-decoration: none;
+}

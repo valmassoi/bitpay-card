@@ -36,7 +36,6 @@ export class TransactionListComponent implements OnInit, OnDestroy {
     this.loadActivity()
     this.subscription = this._activityService.setStatus$.subscribe(activity => {
       this.transactions = activity || []
-      console.log("list subscription:",activity)
     })
   }
   ngOnDestroy() {
@@ -49,7 +48,6 @@ export class TransactionListComponent implements OnInit, OnDestroy {
     let token ="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"//get from auth service
     this._activityService.fetchActivity(token)
       .subscribe(data => {
-        console.log(data)
         if (data.error)
           console.log("handle error")
         else

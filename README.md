@@ -16,6 +16,7 @@ Homepage/Login:
 * `CSS Animation` on incorrect login credentials returned from `node.js` backend  
 * Protected Dashboard route using `CanActivate` login guard `Injectable`  
 * Only display "Logout" in navbar if logged in using `*ngIf`  
+
 Activity:
 * Loads mock user activity from `node.js` backend  
 * Transaction loading animation using `Web Animations API`  

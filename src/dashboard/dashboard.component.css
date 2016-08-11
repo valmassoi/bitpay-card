@@ -10,6 +10,11 @@
   color: white;
   font-size: 28px;
 }
+#circle {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
 .sub {
   color: lightgrey;
   font-size: 12px;

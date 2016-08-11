@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class ActivityService {
   private _baseUrl = 'http://localhost:8081/activity'
   activity;
-
+  unFiltered;
   constructor(private _http: Http) {
   }
 
@@ -19,30 +19,36 @@ export class ActivityService {
     headers.append('authorization', token);
     return this._http.get(url, {headers})
       .map(res => {
-        this.activity = res.json();//redundant?
+        this.activity = res.json()//TODO clean up
+        this.unFiltered = res.json()
         this.setActivity(res.json())
+        this.setFilteredActivity(res.json())
         return res.json()
       })
   }
 
-  getActivity() {
+  getActivity(filtered) {
     console.log("getAct",this.activity)
+    if(filtered)
+      return this.unFiltered
     return this.activity
   }
 
   filteredActivity(filtered) {
-    this.activity = filtered//redundant
     this.setActivity(filtered)
   }
 
-
-  private _getActivity = new BehaviorSubject<any>(this.getActivity());
+  private _getActivity = new BehaviorSubject<any>(this.getActivity(false));
+  private _getFilteredActivity = new BehaviorSubject<any>(this.getActivity(true));
 
   setStatus$ = this._getActivity.asObservable();
+  setFilteredStatus$ = this._getFilteredActivity.asObservable();
 
   setActivity(activity){
     this._getActivity.next(activity);
   }
-
+  setFilteredActivity(activity){//seperated into two so original array is not mutatated
+    this._getFilteredActivity.next(activity);
+  }
 
 }

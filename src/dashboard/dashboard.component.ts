@@ -13,6 +13,7 @@ import { TransactionsComponent } from './activity/activity.component';
 export class DashboardComponent implements CanActivate {
 
   activeComponent: string;
+  availableBalance = 675.77;//TODO get from service
 
   constructor() {
 
