@@ -16,7 +16,7 @@ export class UserService {
   login(email, password) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let localUrl = `http://localhost:8081` //TODO empty for production
+    let localUrl = `http://192.168.1.109:8081` //TODO empty for production
     let url = localUrl + '/auth/login'
     return this._http
       .post(

@@ -43,7 +43,7 @@ export class TransactionListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  saveNote(id, newNote) {//TODO allow it to work during filter
+  saveNote(id, newNote) {//TODO allow it to work during filter, set input active right away and enter keydown saves
     this.editNote = null
     this.transactions[id-1].note = newNote//HACK dont go by index
   }

@@ -1,7 +1,7 @@
 <div id="container">
   <img id="loading" class="noprint" *ngIf="!animationDone" @loadState="activityLoading?'active':'inactive'" src="/src/_assets/gifs/loader_black_small.gif" alt="loading...">
   <!-- TODO resize for mobile -->
-  <div id="activity">
+  <div id="activity" [class.table-responsive]="animationDone">
     <table @loadState="activityLoading?'inactive':'active'" class="table table-striped table-hover">
       <thead>
        <tr>

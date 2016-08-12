@@ -19,7 +19,7 @@ module.exports = [//HACK move to backend and in a service
   },
   {
     id: 3,
-    note: "flight to san fran",
+    note: "flight to ATL",
     date: Date.now()-(24*60*60*1000)-21165198,
     description: "Airlines",
     pending: false,
@@ -73,7 +73,7 @@ module.exports = [//HACK move to backend and in a service
   },
   {
     id: 9,
-    note: "gotta eat",
+    note: "yum",
     date: Date.now()-(24*60*60*1000)-21165198,
     description: "Restaurant",
     pending: false,
@@ -82,7 +82,7 @@ module.exports = [//HACK move to backend and in a service
   },
   {
     id: 10,
-    note: "bought some cool thing",
+    note: null,
     date: Date.now()-(24*60*60*1000)-21165198,
     description: "Shopping/Retail",
     pending: false,

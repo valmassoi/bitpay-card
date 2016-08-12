@@ -1,5 +1,5 @@
 <ul>
-  <li [class.active]="activeComponent==='activity'" (click)="changeActiveComponent($event, 'activity')"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Activity</li>
+  <li [class.active]="activeComponent==='activity'" (click)="changeActiveComponent($event, 'activity')"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Activity</li>
   <li (click)="changeActiveComponent($event, 'contact info')">
     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
     <ul class="options">
@@ -22,5 +22,32 @@
   </li>
 </ul>
 <div class="btn-group">
-<button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add Funds</button>
+<button class="btn btn-primary" (click)="modal.open()"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Add Funds</button>
+<!-- TODO move to own component -->
+<modal #modal>
+    <modal-header id="modal-header" [show-close]="true">
+      <h1 class="modal-title">Add Funds</h1>
+    </modal-header>
+    <modal-body>
+      <div>
+        <div class="row" id="scancopy-container">
+          <div [class.active]="scanOrCopy=='scan'" (click)="setScanOrCopy('scan')" class="scan-copy col col-xs-6">
+            Scan
+          </div>
+          <div [class.active]="scanOrCopy=='copy'" (click)="setScanOrCopy('copy')" class="scan-copy col-xs-6">
+            Copy
+          </div>
+        </div>
+      </div>
+      <div *ngIf="scanOrCopy=='scan'" id="qr">
+        <qrcode [qrdata]="btcAddress" [size]="250" [level]="'M'"></qrcode>
+      </div>
+      <div *ngIf="scanOrCopy=='copy'" id="copy">
+        <i class="fa fa-clone" aria-hidden="true"></i> {{btcAddress}}
+      </div>
+    </modal-body>
+    <modal-footer [show-default-buttons]="false">
+      <button (click)="openWallet()" class="btn btn-primary">Open in wallet&nbsp;&nbsp;&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></button>
+    </modal-footer>
+</modal>
 </div>

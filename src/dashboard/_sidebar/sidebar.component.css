@@ -33,3 +33,29 @@ ul.options > li:hover {
 .btn-primary:hover {
   background-color: #025aa5;
 }
+.modal-title {
+  font-size: 24 !important;
+  font-style: bold !important;
+}
+#scancopy-container {
+  margin-left: 0px;
+  margin-right: 0px;
+  -webkit-box-shadow: 0 8px 5px -5px #ccc;
+     -moz-box-shadow: 0 8px 5px -5px #ccc;
+          box-shadow: 0 8px 5px -5px #ccc;
+}
+.scan-copy {
+  text-align: center;
+  color: grey;
+  font-size: 22px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.scan-copy.active {
+  color: #025aa5;
+  border-bottom: 3px solid #0275d8;
+}
+#qr, #copy {
+  margin: 0 auto;
+  margin-top: 25px;
+}

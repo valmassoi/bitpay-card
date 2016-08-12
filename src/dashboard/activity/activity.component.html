@@ -1,9 +1,9 @@
 <div id="trans-container" class="col-sm-9 col-md-10">
   <div id="tools" class="row">
-    <div class="col col-xs-3">
+    <div id="filter-container" class="col col-xs-12 col-sm-3">
       <!-- TODO BREAK INTO COMPONENT -->
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <div class="dropdown noprint">
+        <button (click)="filterComingSoon()" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Recent Activity
           <i class="fa fa-chevron-down fa-fw pull-right lightgrey" aria-hidden="true"></i>
         </button>
@@ -16,10 +16,10 @@
         </ul>
       </div>
     </div>
-    <div class="col col-xs-8">
+    <div id="search-container" class="col col-xs-10 col-sm-8 noprint">
       <search-bar></search-bar>
     </div>
-    <div id="print" class="col col-xs-1 centered" (click)="print()">
+    <div id="print" class="col col-xs-2 col-sm-1 centered noprint" (click)="print()">
       <i class="fa fa-print fa-fw" aria-hidden="true"></i>
       <p>Print</p>
     </div>

@@ -16,6 +16,7 @@ declare let ga:Function;
     <router-outlet></router-outlet>
     <div style="text-align: center; margin-top: 100px">
       <a href="https://github.com/valmassoi/bitpay-card" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> github repo</a> by <a href="https://twitter.com/valmassoi" target="_blank">@valmassoi</a>
+      <p style="color: lightgrey;">NOT Affiliated with BitPay - Portfolio piece only</p>
     <div>
     `,
     directives: [ROUTER_DIRECTIVES, NavBarComponent],

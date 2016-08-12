@@ -16,4 +16,7 @@ export class TransactionsComponent {
     print() { //TODO csv export might be better
       window.print()
     }
+    filterComingSoon() {
+      alert('Filter Feature Coming Soon, try out my working friend - the search box')
+    }
 }

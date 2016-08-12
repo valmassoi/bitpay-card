@@ -26,16 +26,21 @@ Activity:
 * Print transactions only removing the side bar using `@media print`  
 * Format currency and date/time using `Custom Pipes`  
 
+Other:
+* Add Funds button modal that generates QR code from `string`  
+* Open in wallet button uses bitcoin `URI string` to open a wallet application with the address
+
 ## Caveats
 The focus of this project is on `Angular 2` and not backend, so there are security vulnerabilities (missing `jwt`)  
 //See comments in code for more.  
 
 ## TODO
-- [ ] Mobile  
+- [ ] Improve Mobile  
 - [ ] Filter Dropdown  
 - [x] Add/edit notes  
-- [ ] Add funds button > modal w/ my bitpay-button animation  
+- [x] Add funds button modal  
 - [ ] Other dashboard pages  
 - [ ] User database/auth(jwt)  
+- [ ] Save notes on backend  
 - [ ] Transaction pagination and filter  
 - [x] Transaction search  

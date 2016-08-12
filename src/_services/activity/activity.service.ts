@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class ActivityService {
-  private _baseUrl = 'http://localhost:8081/activity'
+  private _baseUrl = 'http://192.168.1.109:8081/activity'
   activity;
   unFiltered;
   constructor(private _http: Http) {
