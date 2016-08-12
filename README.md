@@ -30,6 +30,29 @@ Other:
 * Add Funds button modal that generates QR code from `string`  
 * Open in wallet button uses bitcoin `URI string` to open a wallet application with the address
 
+## Local Build
+```bash
+git clone https://github.com/valmassoi/bitpay-card bitpay-card
+cd bitpay-card && mkdir data
+
+# Install dependencies
+npm install
+
+# Create .env
+echo "SECRET_KEY = \"superdupersecretkeythatnoonecanknow\"" >> .env
+
+# Set to dev environment
+In ./index.html uncomment `Dev scripts`
+  comment out `Production scripts`
+
+# Run and watch for changes in .ts and server files
+mongod --port 27018 --dbpath=./data --smallfiles
+nvm use 6 # if using lower version of node.js
+npm run nodemon
+
+# Applciation url: http://localhost:8081
+```
+
 ## Caveats
 The focus of this project is on `Angular 2` and not backend, so there are security vulnerabilities (missing `jwt`)  
 //See comments in code for more.  
@@ -42,5 +65,5 @@ The focus of this project is on `Angular 2` and not backend, so there are securi
 - [ ] Other dashboard pages  
 - [ ] User database/auth(jwt)  
 - [ ] Save notes on backend  
-- [ ] Transaction pagination and filter  
+- [ ] Transaction pagination  
 - [x] Transaction search  
