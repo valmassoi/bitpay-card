@@ -1,8 +1,8 @@
-module.exports = [//HACK move to backend and in a service
+module.exports = [//HACK mock data
   {
     id: 1,
     note: "testing this out",
-    date: Date.now()-(2*24*60*60*1000)-31185198,
+    date: Date.now()-(20*2*24*60*60*1000)-31185198,
     description: "Bitcoin top-up",
     pending: false,
     amount: .05,
@@ -11,7 +11,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 2,
     note: null,
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(20*24*60*60*1000)-21155198,
     description: "Bitcoin top-up",
     pending: false,
     amount: 1000,
@@ -20,7 +20,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 3,
     note: "flight to ATL",
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(12*24*60*60*1000)-218445198,
     description: "Airlines",
     pending: false,
     amount: -95.99,
@@ -29,7 +29,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 4,
     note: null,
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(11*24*60*60*1000)-211375198,
     description: "Bar/Restaurant",
     pending: false,
     amount: -22.29,
@@ -38,7 +38,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 5,
     note: null,
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(10*24*60*60*1000)-211482198,
     description: "Grocery Store",
     pending: false,
     amount: -45.11,
@@ -47,7 +47,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 6,
     note: "new clothes",
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(6*24*60*60*1000)-26165198,
     description: "Shopping/Retail",
     pending: false,
     amount: -85,
@@ -56,7 +56,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 7,
     note: "returned clothes, didnt fit",
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(5*24*60*60*1000)-21157198,
     description: "Shopping/Retail",
     pending: false,
     amount: 85,
@@ -65,7 +65,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 8,
     note: null,
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(2*24*60*60*1000)-25388198,
     description: "Gas Station",
     pending: false,
     amount: -37,
@@ -74,7 +74,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 9,
     note: "yum",
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(2*24*60*60*1000)-21165198,
     description: "Restaurant",
     pending: false,
     amount: -23,
@@ -83,7 +83,7 @@ module.exports = [//HACK move to backend and in a service
   {
     id: 10,
     note: null,
-    date: Date.now()-(24*60*60*1000)-21165198,
+    date: Date.now()-(24*60*60*1000)-21135198,
     description: "Shopping/Retail",
     pending: false,
     amount: -200.89,
