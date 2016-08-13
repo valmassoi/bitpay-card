@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, animate, transition, trigger, state, style } from '@angular/core';
+import { Component, OnInit, OnDestroy, animate, transition, trigger, state, style, ViewChild, NgZone } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import { ActivityService } from '../../../_services/activity/activity.service';
 
@@ -24,14 +24,14 @@ import { ActivityService } from '../../../_services/activity/activity.service';
   ]
 })
 export class TransactionListComponent implements OnInit, OnDestroy {
-
+  @ViewChild('note') inputElementRef;
   activityLoading;//spinner
   animationDone=false;
   transactions=[];//Array<>
   subscription:Subscription;
   editNote;
 
-  constructor(private _activityService: ActivityService) { }
+  constructor(private _activityService: ActivityService, private _ngZone: NgZone) { }
 
   ngOnInit() {
     this.loadActivity()
@@ -46,6 +46,21 @@ export class TransactionListComponent implements OnInit, OnDestroy {
   saveNote(id, newNote) {//TODO allow it to work during filter, set input active right away and enter keydown saves
     this.editNote = null
     this.transactions[id-1].note = newNote//HACK dont go by index
+  }
+
+  edit(id) {
+    this.editNote=id;
+    this._ngZone.runOutsideAngular(() => {
+      setTimeout(() => this.focusInput(), 0);
+    });
+  }
+
+  setFocus(elementRef) {
+    elementRef.nativeElement.select(); // setSelectionRange(0, this.value.length) for safari mobile?
+  }
+
+  focusInput() {
+    this.setFocus(this.inputElementRef);
   }
 
   private loadActivity(){ //(filter?) filter on backend
