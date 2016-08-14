@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CanActivate } from '@angular/router';
 
+import { PasswordComponent } from './change-password/password.component';
 import { SidebarComponent } from './_sidebar/sidebar.component';
 import { TransactionsComponent } from './activity/activity.component';
 
@@ -8,7 +9,7 @@ import { TransactionsComponent } from './activity/activity.component';
   selector: 'dashboard',
   templateUrl: 'src/dashboard/dashboard.component.html',
   styleUrls: ['src/dashboard/dashboard.component.css'],
-  directives: [SidebarComponent, TransactionsComponent]
+  directives: [PasswordComponent, SidebarComponent, TransactionsComponent]
 })
 export class DashboardComponent implements CanActivate {
 
