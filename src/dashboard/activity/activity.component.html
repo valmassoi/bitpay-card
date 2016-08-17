@@ -8,11 +8,9 @@
           <i class="fa fa-chevron-down fa-fw pull-right lightgrey" aria-hidden="true"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li [class.selected]="true"><a>Recent Activity</a></li>
+          <li [class.selected]="false"><a>Credits</a></li>
+          <li [class.selected]="false"><a>Debits</a></li>
         </ul>
       </div>
     </div>
