@@ -28,7 +28,8 @@ Activity:
 
 Other:
 * Add Funds button modal that generates QR code from `string`  
-* Open in wallet button uses bitcoin `URI string` to open a wallet application with the address
+* Open in wallet button uses bitcoin `URI string` to open a wallet application with the address  
+* Validate Password and PIN changes using `closures`  
 
 ## Local Build
 ```bash
