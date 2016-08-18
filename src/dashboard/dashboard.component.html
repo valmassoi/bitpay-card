@@ -17,14 +17,14 @@
     <div [ngSwitch]="activeComponent">
       <!-- Could use router here too -->
       <!-- IDEA have router look for query to go to right component for outside linking -->
-      <div *ngSwitchCase="'contact info'"><h1>Contact Info</h1></div>
+      <div *ngSwitchCase="'contact info'"><h1>Contact Info</h1><p>Coming Soon</p></div>
       <div *ngSwitchCase="'change password'"><security-form updating="Password"></security-form></div>
       <div *ngSwitchCase="'change pin'"><security-form updating="PIN"></security-form></div>
-      <div *ngSwitchCase="'direct deposit form'"><h1>Direct Deposit Form</h1></div>
-      <div *ngSwitchCase="'reload options'"><h1>Reload Options</h1></div>
-      <div *ngSwitchCase="'report lost/stolen'"><h1>Report Lost/Stolen</h1></div>
-      <div *ngSwitchCase="'order replacement'"><h1>Order Replacement</h1></div>
-      <div *ngSwitchCase="'contact support'"><h1>Contact Support</h1></div>
+      <div *ngSwitchCase="'direct deposit form'"><h1>Direct Deposit Form</h1><p>Coming Soon</p></div>
+      <div *ngSwitchCase="'reload options'"><h1>Reload Options</h1><p>Coming Soon</p></div>
+      <div *ngSwitchCase="'report lost/stolen'"><h1>Report Lost/Stolen</h1><p>Coming Soon</p></div>
+      <div *ngSwitchCase="'order replacement'"><h1>Order Replacement</h1><p>Coming Soon</p></div>
+      <div *ngSwitchCase="'contact support'"><h1>Contact Support</h1><p>Coming Soon</p></div>
       <div *ngSwitchDefault><activity></activity></div>
     </div>
   </div>
