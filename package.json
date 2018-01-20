@@ -39,7 +39,7 @@
     "angular2-in-memory-web-api": "0.0.14",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.1",
-    "bootstrap": "^3.3.6",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.0",
     "cors": "^2.7.1",
     "dotenv": "^2.0.0",
