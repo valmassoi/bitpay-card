@@ -13,7 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node ./server.js",
     "nodemon": "nodemon ./server.js && concurrently \"npm run tsc\" \"npm run tsc:w\"",
-    "build": "node bundler.js --prod"
+    "build": "node bundler.js --prod",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -59,8 +61,9 @@
     "systemjs": "0.19.27",
     "underscore": "^1.8.3",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1",
-    "zone.js": "^0.6.12"
+    "webpack-dev-server": "^3.1.2",
+    "zone.js": "^0.6.12",
+    "snyk": "^1.89.0"
   },
   "engines": {
     "node": "6.3.1"
@@ -73,5 +76,6 @@
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
     "yargs": "^4.7.1"
-  }
+  },
+  "snyk": true
 }
